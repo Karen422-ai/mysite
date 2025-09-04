@@ -1,149 +1,174 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Мой сайт</title>
-    <style>
-        /* Общие стили */
-        body {
-            margin:0;
-            font-family: Arial, sans-serif;
-            background:#0d1117;
-            color:#c9d1d9;
-        }
+  <meta charset="UTF-8">
+  <title>Мой сайт</title>
+  <style>
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    /* Меню */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #161b22;
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #58a6ff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        h1, h2, p {
-            animation: fadeIn 1.2s ease-in-out;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        @keyframes fadeIn {
-            0% {opacity: 0; transform: translateY(20px);}
-            100% {opacity: 1; transform: translateY(0);}
-        }
+    /* Кнопка */
+    .button {
+      background: #fff;
+      color: #0072ff;
+      padding: 12px 25px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background: #0072ff;
+      color: #fff;
+      transform: scale(1.1);
+    }
 
-        /* Меню */
-        nav {
-            position:fixed; top:0; width:100%; background:#161b22; padding:10px 0; text-align:center; z-index:1000;
-        }
-        nav a {
-            color:#58a6ff; margin:0 15px; text-decoration:none;
-        }
+    /* Карточки проектов */
+    .card {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: 0.3s;
+      width: 250px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+    }
 
-        /* Кнопки */
-        .button {
-            background: #fff;
-            color: #0072ff;
-            padding: 12px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background: #0072ff;
-            color: #fff;
-            transform: scale(1.1);
-        }
+    /* Анимация текста */
+    h1, h2, p {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
 
-        /* Карточки проектов */
-        .card {
-            background: #161b22;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.7);
-        }
+    /* Анимация при скролле */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        /* Анимация при прокрутке */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-out;
-        }
-        .fade-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    section {
+      padding: 100px 20px 50px 20px;
+      text-align: center;
+    }
+
+    #projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Меню -->
-<nav>
+  <!-- Меню -->
+  <nav>
     <a href="#home">Главная</a>
     <a href="#about">Обо мне</a>
     <a href="#projects">Проекты</a>
     <a href="#contacts">Контакты</a>
-</nav>
+  </nav>
 
-<!-- Шапка -->
-<header id="home" style="padding:150px 20px 50px 20px; text-align:center;">
+  <!-- Главная -->
+  <header id="home">
     <h1>Привет! Это моё портфолио</h1>
-</header>
+    <img src="images/Kar.png" alt="Моя картинка" style="width:200px; border-radius:50%; margin:20px 0;">
+  </header>
 
-<!-- Секция "Обо мне" -->
-<section id="about" style="padding:50px 20px; text-align:center; background:#0d1117;">
-    <h2 style="color:#58a6ff;">Обо мне</h2>
+  <!-- Обо мне -->
+  <section id="about">
+    <h2 class="fade-in">Обо мне</h2>
     <img src="images/me.png" alt="Моё фото" style="width:150px; border-radius:50%; margin:20px 0;">
-    <p>Привет! Меня зовут Карен, мне 15 лет. Я учусь создавать сайты и хочу стать веб-разработчиком. Здесь ты можешь увидеть мои проекты и связаться со мной.</p>
+    <p class="fade-in">Привет! Меня зовут Карен, мне 15 лет. Я учусь создавать сайты и хочу стать веб-разработчиком. Здесь ты можешь увидеть мои проекты и связаться со мной.</p>
     <div style="margin-top:20px;">
-        <a href="https://github.com/Karen422-ai" target="_blank" style="margin:0 10px; color:#58a6ff; font-size:24px; text-decoration:none;">GitHub</a>
-        <a href="https://t.me/Karen422" target="_blank" style="margin:0 10px; color:#58a6ff; font-size:24px; text-decoration:none;">Telegram</a>
+      <a href="https://github.com/Karen422-ai" target="_blank" style="margin:0 10px; color:#58a6ff; font-size:24px; text-decoration:none;">GitHub</a>
+      <a href="https://t.me/Karen422" target="_blank" style="margin:0 10px; color:#58a6ff; font-size:24px; text-decoration:none;">Telegram</a>
     </div>
-</section>
+  </section>
 
-<!-- Секция "Проекты" -->
-<section id="projects" style="padding:50px 20px; text-align:center;">
+  <!-- Проекты -->
+  <section id="projects">
     <h2 class="fade-in">Мои проекты</h2>
-    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-        <div class="card fade-in">
-            <img src="https://via.placeholder.com/200x100" alt="Проект 1" style="width:100%; border-radius:8px;">
-            <p>Сайт-визитка</p>
-        </div>
-        <div class="card fade-in">
-            <img src="https://via.placeholder.com/200x100" alt="Проект 2" style="width:100%; border-radius:8px;">
-            <p>Лендинг для игры</p>
-        </div>
-        <div class="card fade-in">
-            <img src="https://via.placeholder.com/200x100" alt="Проект 3" style="width:100%; border-radius:8px;">
-            <p>Блог о технологиях</p>
-        </div>
+
+    <div class="card fade-in">
+      <img src="images/project1.png" alt="Проект 1" style="width:100%; border-radius:8px;">
+      <p>Личная визитка</p>
     </div>
-</section>
 
-<!-- Секция "Контакты" -->
-<section id="contacts" style="padding:50px 20px; text-align:center; background:#0d1117;">
-    <h2 style="color:#58a6ff;">Контакты</h2>
-    <p>GitHub: <a href="https://github.com/Karen422-ai" target="_blank" style="color:#58a6ff; text-decoration:none;">github.com/Karen422-ai</a></p>
-    <p>Email: <a href="mailto:arakelyankaren116@gmail.com" style="color:#58a6ff; text-decoration:none;">arakelyankaren116@gmail.com</a></p>
-</section>
+    <div class="card fade-in">
+      <img src="images/project2.png" alt="Проект 2" style="width:100%; border-radius:8px;">
+      <p>Лендинг для игры</p>
+    </div>
 
-<!-- Скрипт для анимации fade-in -->
-<script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.1 };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
+    <div class="card fade-in">
+      <img src="images/project3.png" alt="Проект 3" style="width:100%; border-radius:8px;">
+      <p>Блог о технологиях</p>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" style="padding:50px 20px; background:#0d1117;">
+    <h2 class="fade-in" style="color:#58a6ff;">Контакты</h2>
+    <p class="fade-in">GitHub: <a href="https://github.com/Karen422-ai" target="_blank" style="color:#58a6ff; text-decoration:none;">github.com/Karen422-ai</a></p>
+    <p class="fade-in">Email: <a href="mailto:arakelyankaren116@gmail.com" style="color:#58a6ff; text-decoration:none;">arakelyankaren116@gmail.com</a></p>
+  </section>
+
+  <!-- Скрипт анимации при скролле -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = { threshold: 0.1 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
         if(entry.isIntersecting){
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
         }
-    });
-}, appearOptions);
-faders.forEach(fader => { appearOnScroll.observe(fader); });
-</script>
+      });
+    }, appearOptions);
 
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
 </body>
 </html>
